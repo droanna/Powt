@@ -1,5 +1,6 @@
 package triangle;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -25,7 +26,10 @@ public class Triangle {
     }
 
     public double area(double a, double b, double c) {
-        List<Double> values = Arrays.asList(a, b, c);
+        List<Double> values = new ArrayList<>();
+        values.add(a);
+        values.add(b);
+        values.add(c);
         values.remove(hypotenuse(a, b, c));
         return 0.5 * values.get(0) * values.get(1);
     }

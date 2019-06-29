@@ -8,26 +8,32 @@ public class TriangleTest {
     Triangle triangle = new Triangle();
 
     @Test
-    public void checkIfTriangleCanBeCreatedIfYes(){
-        Boolean result = triangle.checkIfTraingleCanBeCreated(5,12,13);
+    public void checkIfTriangleCanBeCreatedIfYes() {
+        Boolean result = triangle.checkIfTraingleCanBeCreated(5, 12, 13);
         Assertions.assertThat(result).isTrue();
     }
 
     @Test
-    public void checkIfTriangleCanBeCreatedIfNo(){
-        Assertions.assertThatThrownBy(() -> triangle.checkIfTraingleCanBeCreated(2,3,4)).isInstanceOf(IllegalArgumentException.class);
+    public void checkIfTriangleCanBeCreatedIfNo() {
+        Assertions.assertThatThrownBy(() -> triangle.checkIfTraingleCanBeCreated(2, 3, 4)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    public void hypotenuseTest(){
-        Double result = triangle.hypotenuse(3,4,2);
+    public void hypotenuseTest() {
+        Double result = triangle.hypotenuse(3, 4, 2);
         Assertions.assertThat(result).isEqualTo(4);
     }
 
     @Test
-    public void perimeterTest(){
-        Double result = triangle.perimeter(2,3,4);
+    public void perimeterTest() {
+        Double result = triangle.perimeter(2, 3, 4);
         Assertions.assertThat(result).isEqualTo(9);
+    }
+
+    @Test
+    public void areaTest() {
+        Double result = triangle.area(5, 12, 13);
+        Assertions.assertThat(result).isEqualTo(30);
     }
 
 }
