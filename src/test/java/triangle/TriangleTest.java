@@ -17,4 +17,17 @@ public class TriangleTest {
     public void checkIfTriangleCanBeCreatedIfNo(){
         Assertions.assertThatThrownBy(() -> triangle.checkIfTraingleCanBeCreated(2,3,4)).isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    public void hypotenuseTest(){
+        Double result = triangle.hypotenuse(3,4,2);
+        Assertions.assertThat(result).isEqualTo(4);
+    }
+
+    @Test
+    public void perimeterTest(){
+        Double result = triangle.perimeter(2,3,4);
+        Assertions.assertThat(result).isEqualTo(9);
+    }
+
 }
